@@ -1,3 +1,4 @@
+// assets
 import bedIcon from "../../../assets/bed.svg";
 
 const CardBedroom = ({ card }) => {

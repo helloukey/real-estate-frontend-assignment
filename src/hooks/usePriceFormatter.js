@@ -1,3 +1,4 @@
+// hooks
 import { useState } from "react";
 
 const usePriceFormatter = () => {
@@ -5,7 +6,8 @@ const usePriceFormatter = () => {
 
   const formatNumber = (userNumber) => {
     if (userNumber < 1e3) return setNumber(userNumber);
-    if (userNumber >= 1e3) return setNumber(+(userNumber / 1e3).toFixed(1) + "K");
+    if (userNumber >= 1e3)
+      return setNumber(+(userNumber / 1e3).toFixed(1) + "K");
   };
 
   return { number, formatNumber };

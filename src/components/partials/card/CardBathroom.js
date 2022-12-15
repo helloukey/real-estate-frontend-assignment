@@ -1,3 +1,4 @@
+// assets
 import bathIcon from "../../../assets/bath.svg";
 
 const CardBathroom = ({ card }) => {

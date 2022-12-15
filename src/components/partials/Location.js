@@ -1,3 +1,4 @@
+// redux
 import { useDispatch } from "react-redux";
 import { setLocation } from "../../redux/filterSlice";
 
@@ -5,8 +6,8 @@ const Location = () => {
   const dispatch = useDispatch();
 
   const handleLocation = (e) => {
-    dispatch(setLocation(e.target.value))
-  }
+    dispatch(setLocation(e.target.value));
+  };
 
   return (
     <div className="flex flex-col gap-2 w-full px-5 border-r-2 border-base-300">

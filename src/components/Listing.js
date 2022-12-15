@@ -1,4 +1,6 @@
 import { useSelector } from "react-redux";
+
+// components
 import Loader from "../loading/Loader";
 import Error from "./Error";
 import Card from "./partials/Card";

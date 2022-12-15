@@ -1,3 +1,4 @@
+// assets
 import heartFilledIcon from "../../../assets/heart-filled.svg";
 import heartBorderIcon from "../../../assets/heart-border.svg";
 

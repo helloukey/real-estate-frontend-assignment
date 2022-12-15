@@ -8,6 +8,6 @@ export const store = configureStore({
     [realtorApi.reducerPath]: realtorApi.reducer,
   },
   middleware: (getDefaultMiddleware) => {
-    return getDefaultMiddleware().concat(realtorApi.middleware)
-  }
+    return getDefaultMiddleware().concat(realtorApi.middleware);
+  },
 });

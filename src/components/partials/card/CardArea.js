@@ -1,3 +1,4 @@
+// assets
 import areaIcon from "../../../assets/area.svg";
 
 const CardArea = ({ card }) => {

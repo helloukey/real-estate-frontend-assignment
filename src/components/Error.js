@@ -1,3 +1,4 @@
+// assets
 import sadIcon from "../assets/sad.svg";
 
 const Error = () => {

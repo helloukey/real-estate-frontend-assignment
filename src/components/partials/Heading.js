@@ -11,6 +11,8 @@ import {
   setIsFetching,
 } from "../../redux/filterSlice";
 import { useGetSearchPropertyQuery } from "../../redux/realtorApi";
+
+// hooks
 import { useEffect, useState } from "react";
 
 const Heading = () => {

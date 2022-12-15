@@ -1,4 +1,7 @@
+// components
 import Range from "./Range";
+
+// redux
 import { useDispatch, useSelector } from "react-redux";
 import { setIsPrice } from "../../redux/filterSlice";
 
@@ -12,15 +15,12 @@ const Price = ({ minNumber, maxNumber }) => {
       onClick={() => dispatch(setIsPrice(!isPrice))}
     >
       <label htmlFor="price">Price</label>
-      <span id="price" className="bg-base-100 p-3 rounded-md h-full flex items-center">
-        $
-        <strong>
-          {minNumber}
-        </strong>
-        <pre>{" - "}</pre>$
-        <strong>
-          {maxNumber}
-        </strong>
+      <span
+        id="price"
+        className="bg-base-100 p-3 rounded-md h-full flex items-center"
+      >
+        $<strong>{minNumber}</strong>
+        <pre>{" - "}</pre>$<strong>{maxNumber}</strong>
       </span>
       <div className={isPrice ? "" : "hidden"}>
         <Range />

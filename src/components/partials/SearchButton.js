@@ -1,4 +1,7 @@
+// hooks
 import { useEffect } from "react";
+
+// redux
 import { useDispatch, useSelector } from "react-redux";
 import { setData, setIsError, setIsLoading } from "../../redux/filterSlice";
 import { useLazyGetRentingPropertyQuery } from "../../redux/realtorApi";

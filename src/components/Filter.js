@@ -14,15 +14,17 @@ import SearchButton from "./partials/SearchButton";
 import Heading from "./partials/Heading";
 
 const Filter = () => {
-  const { minPrice, maxPrice } = useSelector(state => state.filter);
-  const { number: minNumber, formatNumber: minFormatNumber } = usePriceFormatter();
-  const { number: maxNumber, formatNumber: maxFormatNumber } = usePriceFormatter();
+  const { minPrice, maxPrice } = useSelector((state) => state.filter);
+  const { number: minNumber, formatNumber: minFormatNumber } =
+    usePriceFormatter();
+  const { number: maxNumber, formatNumber: maxFormatNumber } =
+    usePriceFormatter();
 
   useEffect(() => {
     minFormatNumber(minPrice);
     maxFormatNumber(maxPrice);
-  },[minFormatNumber, maxFormatNumber, minPrice, maxPrice])
-  
+  }, [minFormatNumber, maxFormatNumber, minPrice, maxPrice]);
+
   return (
     <div className="w-full max-w-7xl mx-auto px-2 sm:px-6 md:px-8 lg:px-10 xl:px-12 pt-6 sm:pt-8 md:pt-16">
       {/* Heading and SearchBar */}
@@ -41,7 +43,6 @@ const Filter = () => {
         {/* Search Button */}
         <SearchButton />
       </div>
-      
     </div>
   );
 };
