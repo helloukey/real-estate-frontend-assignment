@@ -3,31 +3,39 @@ import searchIcon from "../../assets/search.svg";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
-import { setIsLoading, setIsError, setData, setSearchQuery, setIsFetching } from "../../redux/filterSlice";
+import {
+  setIsLoading,
+  setIsError,
+  setData,
+  setSearchQuery,
+  setIsFetching,
+} from "../../redux/filterSlice";
 import { useGetSearchPropertyQuery } from "../../redux/realtorApi";
 import { useEffect, useState } from "react";
 
 const Heading = () => {
   const [inputValue, setInputValue] = useState("");
   const dispatch = useDispatch();
-  const { searchQuery } = useSelector(state => state.filter);
-  const { isFetching, data } = useGetSearchPropertyQuery({searchLocation: searchQuery});
+  const { searchQuery } = useSelector((state) => state.filter);
+  const { isFetching, data } = useGetSearchPropertyQuery({
+    searchLocation: searchQuery,
+  });
 
   const handleSearchQuery = (e) => {
-    if(!inputValue.length) {
-      return
+    if (!inputValue.length) {
+      return;
     }
 
     dispatch(setSearchQuery(inputValue));
-  }
+  };
 
   // onMount Search Result
   useEffect(() => {
     dispatch(setIsError(data?.error ? true : false));
     dispatch(setData(data));
     dispatch(setIsLoading(isFetching));
-    dispatch(setIsFetching(isFetching))
-  },[isFetching, data, dispatch]);
+    dispatch(setIsFetching(isFetching));
+  }, [isFetching, data, dispatch]);
 
   return (
     <div className="flex flex-wrap justify-between items-center gap-4">
@@ -42,7 +50,12 @@ const Heading = () => {
             className="input input-bordered"
             onChange={(e) => setInputValue(e.target.value)}
           />
-          <button className="btn btn-square" onClick={handleSearchQuery}>
+          <button
+            className={`btn btn-square ${
+              isFetching ? "btn-active pointer-events-none" : ""
+            }`}
+            onClick={handleSearchQuery}
+          >
             <img src={searchIcon} alt="search" className="w-5 h-5" />
           </button>
         </div>

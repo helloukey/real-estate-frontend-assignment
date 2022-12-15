@@ -42,8 +42,13 @@ const SearchButton = () => {
 
   return (
     <div className="h-full flex items-center w-full px-5">
-      <button className="w-full btn mt-4 lg:mt-0" onClick={handleSubmit}>
-        Search
+      <button
+        className={`w-full btn mt-4 lg:mt-0 ${
+          results.isFetching ? "btn-active pointer-events-none" : ""
+        }`}
+        onClick={handleSubmit}
+      >
+        {results.isFetching ? "Searching..." : "Search"}
       </button>
     </div>
   );
